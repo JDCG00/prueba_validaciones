@@ -12,6 +12,13 @@ console.log('Cargado JS')
 /*Validaciones*/
 
 
+//Inicialización
+window.onload = iniciar
+
+function iniciar() {
+    media()
+}
+
 
 //Función para añadir módulos 1DAW
 
@@ -96,7 +103,7 @@ function media() {
 
     //Se calcula la media
 
-    media = (input1 + input2 + input3)/3
+    let media = (input1 + input2 + input3)/3
 
     //Se modifica el texto con la media indicada
     span.textContent = media
@@ -119,6 +126,36 @@ function cero() {
 
 }
 
-media();
+//Función para enviar
+function enviar() {
 
+    //console.log('funciona');
 
+    
+
+    //Se hace la suma
+    let suma = (input1 + input2 + input3)
+
+    //Si está bien sigue normal, si está mal manda un error 
+    if (suma>=10&&suma<=20) {
+        /*console.log('perfe');*/
+        //Selecciona los tres inputs tipo number pasándolos a int, para que no se concatenen como si fuera un text
+    // a la hora de hacer la suma 
+    let input1 = parseInt(document.getElementById('iCalculo1').value)
+    let input2 = parseInt(document.getElementById('iCalculo2').value)
+    let input3 = parseInt(document.getElementById('iCalculo3').value)
+
+    //Selecciona el divError
+    let div = document.getElementById('divError')
+    }
+    else{
+        /*console.log('error');*/
+
+        //Cambia el estilo poniendo display flex
+        let divError = document.getElementById('divError').style.display='flex'
+        //Pone un texto de error
+        let textoError = document.createTextNode('Error')
+        div.appendChild(textoError)
+    }
+
+}
