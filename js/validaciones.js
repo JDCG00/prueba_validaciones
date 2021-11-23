@@ -83,9 +83,23 @@ function dosDaw() {
 
 function media() {
     //Selecciona el span de la media
-    let span = document.getElementById('spanMedia').textContent;
+    let span = document.getElementById('spanMedia')
 
+    //Selecciona los tres inputs tipo number pasándolos a int, para que no se concatenen como si fuera un text
+    // a la hora de hacer la media
+    let input1 = parseInt(document.getElementById('iCalculo1').value)
+    let input2 = parseInt(document.getElementById('iCalculo2').value)
+    let input3 = parseInt(document.getElementById('iCalculo3').value)
+
+    /*console.log(input1);*/
     /*console.log(span);*/
+
+    //Se calcula la media
+
+    media = (input1 + input2 + input3)/3
+
+    //Se modifica el texto con la media indicada
+    span.textContent = media
 
     
 
